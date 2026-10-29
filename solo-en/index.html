@@ -1,0 +1,255 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Operation: RING — Vladlen &amp; Anna are getting married!</title>
+  <meta name="description" content="Two dogs, one invitation, and a very sleepy couple.">
+  <meta name="robots" content="noindex, nofollow">
+  <meta property="og:title" content="Operation: RING — Vladlen &amp; Anna are getting married!">
+  <meta property="og:description" content="Two dogs, one invitation, and a very sleepy couple.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://gvart.github.io/op-ring/solo-en/">
+  <meta property="og:image" content="https://gvart.github.io/op-ring/og.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+  <link rel="stylesheet" href="../vendor/fonts.css">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+  <canvas id="confetti" aria-hidden="true"></canvas>
+  <nav class="ctrl" data-i18n-aria="aCtrl">
+    <button id="prevBtn" type="button" data-i18n-aria="aPrev"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 5h3v14H6zM20 5v14L10 12z"/></svg></button>
+    <button id="playBtn" type="button" data-i18n-aria="aPlay"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="i-play" d="M7 4l13 8-13 8z"/><path class="i-pause" d="M6 4h4v16H6zM14 4h4v16h-4z"/></svg></button>
+    <button id="nextBtn" type="button" data-i18n-aria="aNext"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5h3v14h-3zM4 5v14l10-7z"/></svg></button>
+    <button id="soundBtn" type="button" data-i18n-aria="aSound" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 9h4l5-4v14l-5-4H3z"/><path class="i-on" d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/><path class="i-off" d="M16 9l6 6M22 9l-6 6" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/></svg></button>
+  </nav>
+  <div class="idle-hint" id="idleHint" aria-hidden="true"><span data-i18n="idleHint"></span></div>
+
+  <div class="whip" aria-hidden="true"></div>
+
+  <main>
+    <!-- COVER: the case file -->
+    <section class="scene cover" style="--bg:#FFF1D6">
+      <div class="stamp" data-i18n="stamp"></div>
+      <h1 data-i18n="coverTitle"></h1>
+      <p class="sub" data-i18n="coverSub"></p>
+      <button class="play-big" id="playBig" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4l13 8-13 8z"/></svg> <span data-i18n="playStory"></span></button>
+      <div class="agents">
+        <article class="agent"><img class="tap" data-pop="gabi" src="../assets/cut/gabi-mastermind.webp" alt="Gabi"><h3 data-i18n="aGabi"></h3><p class="code" data-i18n="aGabiCode"></p><p class="role" data-i18n="aGabiRole"></p><p data-i18n="aGabiSkill"></p></article>
+        <article class="agent"><img class="tap" data-pop="mira" src="../assets/cut/mira-sneak.webp" alt="Mira"><h3 data-i18n="aMira"></h3><p class="code" data-i18n="aMiraCode"></p><p class="role" data-i18n="aMiraRole"></p><p data-i18n="aMiraSkill"></p></article>
+        <article class="agent subject"><img class="tap" data-pop="vladlen" src="../assets/cut/vladlen-wave.webp" alt="Vladlen"><h3 data-i18n="aVlad"></h3><p class="code" data-i18n="aVladCode"></p><p class="role" data-i18n="aVladRole"></p><p data-i18n="aVladSkill"></p></article>
+        <article class="agent subject"><img class="tap" data-pop="anna" src="../assets/cut/anna-wave.webp" alt="Anna"><h3 data-i18n="aAnna"></h3><p class="code" data-i18n="aAnnaCode"></p><p class="role" data-i18n="aAnnaRole"></p><p data-i18n="aAnnaSkill"></p></article>
+      </div>
+      <p class="cap flow" data-i18n="cap0"></p>
+      <p class="cue"><span data-i18n="cue"></span> <span class="arrow">↓</span></p>
+    </section>
+
+    <!-- CH 1: infiltration -->
+    <section class="pinned infil" id="infil">
+      <div class="titlebox"><div class="chapter" data-i18n="ch1"></div><p class="cap" data-i18n="cap1"></p></div>
+      <div class="stage">
+        <div class="moon"></div>
+        <div class="frames"><i>🐶</i><i>💍</i><i>🐩</i></div>
+        <div class="floor"></div>
+        <div class="lasers"><i style="--x:21vw;--k:.5"></i><i style="--x:26.6vw;--k:.5"></i><i style="--x:30vw;--k:.97"></i><div class="tag free" data-i18n="tgLaser"></div></div>
+
+        <div class="actor dog gabi idle" style="left:2%">
+          <img class="a" src="../assets/cut/gabi-tiptoe.webp" alt="Gabi">
+          <img class="b" src="../assets/cut/gabi-point.webp" alt="">
+          <div class="say l"><div class="bubble" data-i18n="i1"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="i8"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="i5"></div></div>
+          <div class="tag" data-i18n="tgGabi"></div>
+        </div>
+        <div class="actor bed">
+          <img class="a" src="../assets/cut/bed-asleep.webp" alt="Vladlen and Anna asleep">
+          <img class="b" src="../assets/cut/bed-anna-awake.webp" alt="">
+          <div class="zzz" aria-hidden="true"><i>z</i><i>z</i><i>Z</i></div>
+          <div class="say l"><div class="bubble" data-i18n="i3"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="i6"></div></div>
+          <div class="say r"><div class="bubble" data-i18n="i4"></div></div>
+          <div class="say r"><div class="bubble" data-i18n="i7"></div></div>
+          <div class="tag tv" data-i18n="tgVlad"></div>
+          <div class="tag ta" data-i18n="tgAnna"></div>
+        </div>
+        <div class="actor dog mira sneak front" style="left:0">
+          <img class="a" src="../assets/cut/mira-sneak.webp" alt="Mira">
+          <img class="b" src="../assets/cut/mira-leap.webp" alt="">
+          <div class="say l"><div class="bubble" data-i18n="i2"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="i9"></div></div>
+        </div>
+        <div class="alarm"></div>
+      </div>
+    </section>
+
+    <!-- CH 2: the heist -->
+    <section class="pinned heist" id="heist">
+      <div class="titlebox"><div class="chapter" data-i18n="ch2"></div><p class="cap" data-i18n="cap2"></p></div>
+      <div class="stage">
+        <div class="spot"></div>
+        <div class="floor"></div>
+        <div class="actor bed far">
+          <img src="../assets/cut/bed-anna-awake.webp" alt="Anna awake, Vladlen asleep">
+          <div class="zzz" aria-hidden="true"><i>z</i><i>z</i><i>Z</i></div>
+          <div class="say l"><div class="bubble" data-i18n="h7"></div></div>
+          <div class="say r"><div class="bubble" data-i18n="h6"></div></div>
+        </div>
+        <div class="table"><span></span><span></span></div>
+        <div class="props">
+          <svg id="ringbox" viewBox="0 0 110 100" aria-hidden="true"><g stroke="#2A1B2D" stroke-width="4" stroke-linejoin="round">
+            <path d="M14 52 H96 V90 Q96 94 92 94 H18 Q14 94 14 90Z" fill="#FF5A8A"/><path d="M14 52 L24 26 H86 L96 52Z" fill="#FF8FB8"/>
+            <ellipse cx="55" cy="60" rx="18" ry="9" fill="none" stroke="#FFC93C" stroke-width="7"/><path d="M55 46 L48 38 L55 30 L62 38Z" fill="#BDE8FF"/></g></svg>
+          <svg id="envprop" viewBox="0 0 130 90" aria-hidden="true"><g stroke="#2A1B2D" stroke-width="4" stroke-linejoin="round" stroke-linecap="round">
+            <rect x="6" y="8" width="118" height="76" rx="8" fill="#FFF3D6"/><path d="M8 12 L65 54 L122 12" fill="none"/><circle cx="65" cy="52" r="12" fill="#FF5A45"/><path d="M65 58 L59 52 Q58 47 62 47 Q65 47 65 50 Q65 47 68 47 Q72 47 71 52Z" fill="#fff" stroke="none"/></g></svg>
+          <div class="puff"></div>
+          <div class="tag up l" data-i18n="tgRing"></div>
+          <div class="tag up r" data-i18n="tgInv"></div>
+        </div>
+
+        <div class="actor dog gabi idle" style="left:2%">
+          <img class="a" src="../assets/cut/gabi-mastermind.webp" alt="Gabi">
+          <img class="b" src="../assets/cut/gabi-point.webp" alt="">
+          <div class="say l"><div class="bubble" data-i18n="h1"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="h3"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="h4"></div></div>
+        </div>
+        <div class="actor dog mira sneak front" style="left:0">
+          <img class="a" src="../assets/cut/mira-sneak.webp" alt="Mira">
+          <img class="b" src="../assets/cut/mira-run.webp" alt="">
+          <img class="c" src="../assets/cut/mira-sniff.webp" alt="">
+          <img class="d" src="../assets/cut/mira-leap.webp" alt="">
+          <div class="say l"><div class="bubble" data-i18n="h2"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="h5"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="h8"></div></div>
+          <div class="tag" data-i18n="tgMira"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CH 3: the chase -->
+    <section class="pinned chase" id="chase">
+      <div class="titlebox"><div class="chapter" data-i18n="ch3"></div><p class="cap" data-i18n="cap3"></p></div>
+      <div class="stage">
+        <div class="sun"></div>
+        <div class="bg clouds" data-w="900" data-h="220"></div>
+        <div class="bg far" data-w="720" data-h="320"></div>
+        <div class="bg near" data-w="720" data-h="380"></div>
+        <div class="road"><div class="dash"></div></div>
+        <div class="speed"><i style="top:30%;animation-delay:0s"></i><i style="top:42%;animation-delay:.3s"></i><i style="top:55%;animation-delay:.6s"></i><i style="top:68%;animation-delay:.15s"></i><i style="top:78%;animation-delay:.45s"></i></div>
+
+        <div class="actor human vlad run" style="left:2%">
+          <img src="../assets/cut/vladlen-chase.webp" alt="Vladlen">
+          <div class="say l"><div class="bubble" data-i18n="c1"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="c4"></div></div>
+        </div>
+        <div class="actor human anna run" style="left:22%">
+          <img src="../assets/cut/anna-chase.webp" alt="Anna">
+          <div class="say l"><div class="bubble" data-i18n="c2"></div></div>
+          <div class="say l"><div class="bubble" data-i18n="c5"></div></div>
+          <div class="tag" data-i18n="tgCardio"></div>
+        </div>
+        <div class="actor dog gabi run" style="left:56%">
+          <img src="../assets/cut/gabi-run.webp" alt="Gabi">
+          <div class="say r"><div class="bubble" data-i18n="c3"></div></div>
+          <div class="say r"><div class="bubble" data-i18n="c7"></div></div>
+        </div>
+        <div class="actor dog mira run" style="left:72%">
+          <img src="../assets/cut/mira-run.webp" alt="Mira">
+          <div class="say r"><div class="bubble" data-i18n="c6"></div></div>
+          <div class="say r"><div class="bubble" data-i18n="c8"></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CH 4: the drop -->
+    <section class="scene drop" id="drop" style="--bg:#FFC9DD">
+      <div class="chapter flow" data-i18n="ch4"></div>
+      <p class="cap flow" data-i18n="cap4"></p>
+      <div class="drop-stage">
+        <div class="dogbox gabi">
+          <img class="a" src="../assets/cut/gabi-run.webp" alt="">
+          <img class="b tap" data-pop="gabi" src="../assets/cut/gabi-mastermind.webp" alt="Gabi">
+          <div class="say c"><div class="bubble" data-i18n="d1"></div></div>
+          <div class="say c"><div class="bubble" data-i18n="d7"></div></div>
+        </div>
+        <div class="env-wrap">
+          <div class="tag corner" data-i18n="tgEnv"></div>
+          <button class="env" id="env" type="button" aria-expanded="false">
+            <span class="env-back"></span>
+            <span class="card">
+              <small data-i18n="cardTop"></small>
+              <strong data-i18n="cardTitle"></strong>
+              <em data-i18n="names"></em>
+            </span>
+            <svg class="env-front" viewBox="0 0 300 200" preserveAspectRatio="none" aria-hidden="true">
+              <path d="M2 2 L150 112 L298 2 V198 H2Z" fill="#FF8FB8"/>
+              <path d="M2 2 L150 112 L2 198Z M298 2 L150 112 L298 198Z M2 198 L150 98 L298 198Z" fill="#FF8FB8" stroke="#2A1B2D" stroke-width="4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/>
+            </svg>
+            <span class="flap"><svg viewBox="0 0 300 110" preserveAspectRatio="none" aria-hidden="true"><path d="M2 2 H298 L150 108Z" fill="#FF6FA3" stroke="#2A1B2D" stroke-width="4" stroke-linejoin="round" vector-effect="non-scaling-stroke"/></svg></span>
+            <span class="seal" aria-hidden="true">🐾</span>
+            <svg class="bite" viewBox="0 0 100 100" aria-hidden="true">
+              <g style="fill:#2A1B2D"><circle cx="102" cy="58" r="23"/><circle cx="80" cy="82" r="22"/><circle cx="102" cy="102" r="30"/><circle cx="56" cy="102" r="16"/></g>
+              <g style="fill:var(--bg)"><circle cx="102" cy="58" r="19"/><circle cx="80" cy="82" r="18"/><circle cx="102" cy="102" r="26"/><circle cx="56" cy="102" r="12"/></g>
+            </svg>
+          </button>
+        </div>
+        <div class="dogbox mira">
+          <img class="a" src="../assets/cut/mira-run.webp" alt="">
+          <img class="b tap" data-pop="mira" src="../assets/cut/mira-sneak.webp" alt="Mira">
+          <div class="say c"><div class="bubble" data-i18n="d4"></div></div>
+        </div>
+      </div>
+      <p class="hint" id="hint" data-i18n="envHint"></p>
+      <div class="humans">
+        <div class="hum left"><img class="tap" data-pop="vladlen" src="../assets/cut/vladlen-wave.webp" alt="Vladlen"><div class="say c"><div class="bubble" data-i18n="d2"></div></div><div class="say c"><div class="bubble" data-i18n="d5"></div></div></div>
+        <div class="hum right"><img class="tap" data-pop="anna" src="../assets/cut/anna-wave.webp" alt="Anna"><div class="say c"><div class="bubble" data-i18n="d3"></div></div></div>
+      </div>
+    </section>
+
+    <!-- the details -->
+    <section class="scene info" style="--bg:#FFE27A">
+      <div class="stamp small" data-i18n="declassified"></div>
+      <h2 data-i18n="infoTitle"></h2>
+      <p class="cap flow" data-i18n="cap5"></p>
+      <div class="plan">
+        <div class="block">
+          <h3 data-i18n="when"></h3>
+          <p class="big" id="dateText"></p>
+          <p id="timeText"></p>
+        </div>
+        <div class="block">
+          <h3 data-i18n="where"></h3>
+          <p class="big" data-i18n="venueName"></p>
+          <p data-i18n="venueAddress"></p>
+          <a class="btn" id="mapBtn" target="_blank" rel="noopener" data-i18n="mapBtn"></a>
+        </div>
+      </div>
+      <h3 class="cd-title" data-i18n="cdTitle"></h3>
+      <div class="countdown" id="countdown"></div>
+      <button class="btn alt" id="calBtn" type="button" data-i18n="calBtn"></button>
+      <p class="note" data-i18n="note"></p>
+    </section>
+  </main>
+
+  <footer>
+    <div class="crew">
+      <img class="tap" data-pop="vladlen" src="../assets/cut/vladlen-wave.webp" alt="Vladlen">
+      <img class="tap" data-pop="mira" src="../assets/cut/mira-sneak.webp" alt="Mira">
+      <img class="tap" data-pop="gabi" src="../assets/cut/gabi-mastermind.webp" alt="Gabi">
+      <img class="tap" data-pop="anna" src="../assets/cut/anna-wave.webp" alt="Anna">
+    </div>
+    <p class="see" data-i18n="footer"></p>
+    <p class="ps" data-i18n="ps"></p>
+  </footer>
+
+  <script src="../vendor/gsap.min.js"></script>
+  <script src="../vendor/ScrollTrigger.min.js"></script>
+  <script>window.INVITE = 'solo-en';</script>
+  <script src="../js/content.js"></script>
+  <script src="../js/music.js"></script>
+  <script src="../js/app.js"></script>
+</body>
+</html>
