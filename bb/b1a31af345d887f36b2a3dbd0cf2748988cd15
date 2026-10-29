@@ -1,0 +1,43 @@
+css/style.css
+  s_88f4140c20003a::t_e6f7ea626440a3 1-390
+index.html
+  s_88f4140c20003a::t_70459fb5e33e5c 1-4
+js/app.js
+  s_88f4140c20003a::t_7df12c6af782ff 1-479
+js/content.js
+  s_88f4140c20003a::t_6923ec013dc4e1 1-226
+js/music.js
+  s_88f4140c20003a::t_34e82abe5df61a 1-117
+many-en/index.html
+  s_88f4140c20003a::t_ec373ef0a024c6 1-255
+many-ru/index.html
+  s_88f4140c20003a::t_efa77d25bfb38f 1-255
+robots.txt
+  s_88f4140c20003a::t_5a142791296e20 1-2
+solo-en/index.html
+  s_88f4140c20003a::t_6d1977b9cb5ce6 1-255
+solo-ru/index.html
+  s_88f4140c20003a::t_846781a3f685ee 1-255
+vendor/ScrollTrigger.min.js
+  s_88f4140c20003a::t_30c4ec67e49ae8 1-11
+vendor/fonts.css
+  s_88f4140c20003a::t_88de8c99a8a3e7 1-5
+vendor/gsap.min.js
+  s_88f4140c20003a::t_506284deeb46e1 1-11
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.6.15",
+  "base_commit_sha": "bbb1a31af345d887f36b2a3dbd0cf2748988cd15",
+  "prompts": {},
+  "sessions": {
+    "s_88f4140c20003a": {
+      "agent_id": {
+        "tool": "claude",
+        "id": "b6bfcebd-57ea-4499-aaab-cf96b056c33c",
+        "model": "unknown"
+      },
+      "human_author": "Vladlen Gladis <vladlen.gladis@deliveryhero.com>"
+    }
+  }
+}
